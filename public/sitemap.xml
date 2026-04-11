@@ -2,25 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Pages -->
   <url>
-    <loc>https://fruitymotionstudio.com/</loc>
+    <loc>https://revaitrading.com/</loc>
     <lastmod>2024-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://fruitymotionstudio.com/about</loc>
+    <loc>https://revaitrading.com/about</loc>
     <lastmod>2024-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fruitymotionstudio.com/products</loc>
+    <loc>https://revaitrading.com/products</loc>
     <lastmod>2024-04-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fruitymotionstudio.com/contact</loc>
+    <loc>https://revaitrading.com/contact</loc>
     <lastmod>2024-04-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -28,39 +28,39 @@
 
   <!-- Product Detail Pages -->
   <url>
-    <loc>https://fruitymotionstudio.com/products/banana</loc>
+    <loc>https://revaitrading.com/products/banana</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fruitymotionstudio.com/products/mango</loc>
+    <loc>https://revaitrading.com/products/mango</loc>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://fruitymotionstudio.com/products/orange</loc>
+    <loc>https://revaitrading.com/products/orange</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fruitymotionstudio.com/products/grapes</loc>
+    <loc>https://revaitrading.com/products/grapes</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fruitymotionstudio.com/products/pomegranate</loc>
+    <loc>https://revaitrading.com/products/pomegranate</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fruitymotionstudio.com/products/drumstick</loc>
+    <loc>https://revaitrading.com/products/drumstick</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fruitymotionstudio.com/products/onion</loc>
+    <loc>https://revaitrading.com/products/onion</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fruitymotionstudio.com/products/potato</loc>
+    <loc>https://revaitrading.com/products/potato</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://fruitymotionstudio.com/products/green-chili</loc>
+    <loc>https://revaitrading.com/products/green-chili</loc>
     <priority>0.8</priority>
   </url>
 </urlset>

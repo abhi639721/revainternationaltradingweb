@@ -13,7 +13,7 @@ interface SEOProps {
 const SEO = ({
   title = "Fruity Motion Studio | Premium Indian Fruit & Vegetable Exporter",
   description = "Fruity Motion Studio (Reva International LLP) is a leading exporter of premium Cavendish bananas, mangoes, grapes, and fresh vegetables from India to global markets.",
-  canonical = "https://fruitymotionstudio.com", // Replace with actual domain when live
+  canonical = "https://revaitrading.com", // Replace with actual domain when live
   ogType = "website",
   ogImage = "/favicon.png",
   twitterHandle = "@FruityMotion",
