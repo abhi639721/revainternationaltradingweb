@@ -7,27 +7,33 @@ interface SEOProps {
   ogType?: string;
   ogImage?: string;
   twitterHandle?: string;
-  structuredData?: object;
+  structuredData?: object | object[];
+  keywords?: string;
 }
 
 const SEO = ({
-  title = "R E V Λ INTERNATIONAL TRADING | Premium Indian Fresh Produce Exporter",
-  description = "R E V Λ INTERNATIONAL TRADING is a leading exporter of premium Cavendish bananas, mangoes, grapes, and fresh vegetables from India to global markets.",
-  canonical = "https://revaitrading.com", // Replace with actual domain when live
+  title = "Reva International Trading | Premium Indian Fresh Produce Exporter",
+  description = "Reva International Trading is a leading exporter of premium Cavendish bananas, mangoes, grapes, and fresh vegetables from India to global markets.",
+  canonical = "https://revaitrading.com",
   ogType = "website",
   ogImage = "/favicon.png",
   twitterHandle = "@RevaTrading",
   structuredData,
+  keywords = "Reva, Reva International, Reva International Trading, Reva Trading, Banana Exporter India, Alfonso Mango Export, Fresh Fruit Export, Indian Vegetable Supplier",
 }: SEOProps) => {
-  const fullTitle = title.includes("R E V Λ") 
+  const brandName = "Reva International Trading";
+  const brandVariations = "Reva, Reva International, Reva Trading";
+  
+  const fullTitle = title.includes("Reva") 
     ? title 
-    : `${title} | R E V Λ INTERNATIONAL TRADING`;
+    : `${title} | ${brandName}`;
 
   return (
     <Helmet>
       {/* Standard Metadata */}
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      <meta name="keywords" content={`${keywords}, ${brandVariations}`} />
       <link rel="canonical" href={canonical} />
 
       {/* Open Graph / Facebook */}
