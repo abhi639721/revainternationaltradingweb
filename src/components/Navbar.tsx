@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.webp";
+import revaWordmark from "@/assets/reva.webp";
 
 const isActiveLink = (href: string, pathname: string) => {
   if (href === "/") return pathname === "/";
@@ -14,7 +15,7 @@ const navLinks = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Products", href: "/products" },
-  { label: "Why Us", href: "/#why-us" },
+  { label: "Why Us", href: "/why-us" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -50,9 +51,15 @@ const Navbar = () => {
       >
         <div className="container mx-auto flex justify-between items-center px-4 py-3">
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Reva International LLP" className="h-12 w-12 object-contain" />
-            <div className="leading-tight">
-              <span className="font-display text-lg font-bold text-primary block">REVA INTERNATIONAL</span>
+            <img src={logo} alt="Reva International Trading" className="h-12 w-12 object-contain" />
+            <div className="flex flex-col items-start leading-none gap-0.5">
+              <img src={revaWordmark} alt="Reva International Trading" className="h-8 object-contain" />
+              <span
+                style={{ fontFamily: "'Rajdhani', sans-serif", color: "hsl(100 55% 38%)", letterSpacing: "0.2em" }}
+                className="text-[0.7rem] font-semibold tracking-widest uppercase"
+              >
+                INTERNATIONAL TRADING
+              </span>
             </div>
           </Link>
 
@@ -62,9 +69,8 @@ const Navbar = () => {
               <Link
                 key={link.label}
                 to={link.href}
-                className={`text-sm font-medium transition-colors relative group font-body ${
-                  isActiveLink(link.href, location.pathname) ? "text-primary font-bold" : "text-foreground/80 hover:text-primary"
-                }`}
+                className={`text-sm font-medium transition-colors relative group font-body ${isActiveLink(link.href, location.pathname) ? "text-primary font-bold" : "text-foreground/80 hover:text-primary"
+                  }`}
               >
                 {link.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />

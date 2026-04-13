@@ -1,4 +1,4 @@
-# Fruity Motion Studio
+# Reva International Trading
 
 This is a modern web application built with React, Vite, and Tailwind CSS.
 

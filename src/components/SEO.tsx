@@ -11,17 +11,17 @@ interface SEOProps {
 }
 
 const SEO = ({
-  title = "Fruity Motion Studio | Premium Indian Fruit & Vegetable Exporter",
-  description = "Fruity Motion Studio (Reva International LLP) is a leading exporter of premium Cavendish bananas, mangoes, grapes, and fresh vegetables from India to global markets.",
+  title = "R E V Λ INTERNATIONAL TRADING | Premium Indian Fresh Produce Exporter",
+  description = "R E V Λ INTERNATIONAL TRADING is a leading exporter of premium Cavendish bananas, mangoes, grapes, and fresh vegetables from India to global markets.",
   canonical = "https://revaitrading.com", // Replace with actual domain when live
   ogType = "website",
   ogImage = "/favicon.png",
-  twitterHandle = "@FruityMotion",
+  twitterHandle = "@RevaTrading",
   structuredData,
 }: SEOProps) => {
-  const fullTitle = title.includes("Fruity Motion Studio") 
+  const fullTitle = title.includes("R E V Λ") 
     ? title 
-    : `${title} | Fruity Motion Studio`;
+    : `${title} | R E V Λ INTERNATIONAL TRADING`;
 
   return (
     <Helmet>

@@ -11,13 +11,14 @@ import ProductsPage from "./pages/ProductsPage.tsx";
 import ProductDetail from "./pages/ProductDetail.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Maintenance from "./pages/Maintenance.tsx";
+import WhyUsPage from "./pages/WhyUsPage.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 
 const queryClient = new QueryClient();
 
 // SET THIS TO TRUE TO ENABLE MAINTENANCE MODE
 // SET THIS TO FALSE TO SHOW FULL WEBSITE
-const isMaintenanceMode = true;
+const isMaintenanceMode = false;
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -36,6 +37,7 @@ const App = () => (
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/products" element={<ProductsPage />} />
               <Route path="/products/:slug" element={<ProductDetail />} />
+              <Route path="/why-us" element={<WhyUsPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

@@ -9,7 +9,17 @@ const Products = () => {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   const bananaProduct = products.find((p) => p.slug === "banana")!;
-  const otherProducts = products.filter((p) => p.slug !== "banana");
+  const drumstickProduct = products.find((p) => p.slug === "drumstick")!;
+
+  // Other fruits (not banana)
+  const fruitProducts = products.filter(
+    (p) => p.category === "fruits" && p.slug !== "banana"
+  );
+
+  // Other vegetables & spices (not drumstick)
+  const vegProducts = products.filter(
+    (p) => (p.category === "vegetables" || p.category === "spices") && p.slug !== "drumstick"
+  );
 
   return (
     <section id="products" className="section-padding bg-secondary/50" ref={ref}>
@@ -25,17 +35,17 @@ const Products = () => {
             Quality You Can Trust, Delivered Fresh
           </h2>
           <p className="text-muted-foreground font-body mt-4 max-w-2xl mx-auto">
-            We implement stringent quality control measures throughout the entire supply chain, 
+            We implement stringent quality control measures throughout the entire supply chain,
             from sourcing the finest produce to meticulous handling and secure transportation.
           </p>
         </motion.div>
 
-        {/* Banana Feature Card */}
+        {/* ── 1. Banana Feature Card ── */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="mb-10"
+          className="mb-8"
         >
           <Link to="/products/banana">
             <div
@@ -83,9 +93,9 @@ const Products = () => {
           </Link>
         </motion.div>
 
-        {/* Other Products Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {otherProducts.map((product, i) => (
+        {/* ── 2. Other Fruits Small Cards ── */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
+          {fruitProducts.map((product, i) => (
             <motion.div
               key={product.slug}
               initial={{ opacity: 0, y: 40, scale: 0.95 }}
@@ -118,6 +128,96 @@ const Products = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* ── 3. Drumstick Feature Card ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.7, delay: 0.1 }}
+          className="mb-8"
+        >
+          <Link to="/products/drumstick">
+            <div
+              className="bg-card rounded-2xl overflow-hidden group relative"
+              style={{ boxShadow: "var(--card-shadow)" }}
+            >
+              <div className="grid md:grid-cols-2 items-center">
+                <div className="p-8 md:p-10 order-2 md:order-1">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Star size={16} className="text-primary fill-primary" />
+                    <span className="text-xs font-bold text-primary font-body uppercase tracking-wider">
+                      Vegetable Export
+                    </span>
+                  </div>
+                  <h3 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-3">
+                    Fresh Indian Drumsticks
+                  </h3>
+                  <p className="text-muted-foreground font-body leading-relaxed mb-4 line-clamp-3">
+                    {drumstickProduct.longDesc}
+                  </p>
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {drumstickProduct.varieties?.slice(0, 4).map((v) => (
+                      <span key={v.name} className="text-xs bg-primary/10 text-primary font-semibold px-3 py-1 rounded-full">
+                        {v.name}
+                      </span>
+                    ))}
+                  </div>
+                  <span className="text-primary font-body font-semibold inline-flex items-center gap-1 group-hover:gap-3 transition-all text-sm">
+                    Explore Drumsticks <ArrowRight size={16} />
+                  </span>
+                </div>
+                <div className="h-64 md:h-80 bg-gradient-to-br from-primary/10 to-green-100 flex items-center justify-center p-8 relative overflow-hidden order-1 md:order-2">
+                  <div className="absolute inset-0 bg-primary/5 rounded-full blur-3xl scale-75" />
+                  <motion.img
+                    src={drumstickProduct.image}
+                    alt={drumstickProduct.name}
+                    className="h-52 md:h-64 w-auto object-contain group-hover:scale-110 transition-transform duration-500 relative z-10 drop-shadow-xl"
+                    loading="lazy"
+                    width={256}
+                    height={256}
+                  />
+                </div>
+              </div>
+            </div>
+          </Link>
+        </motion.div>
+
+        {/* ── 4. Other Vegetables & Spices Small Cards ── */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {vegProducts.map((product, i) => (
+            <motion.div
+              key={product.slug}
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 + i * 0.08 }}
+              whileHover={{ y: -8, scale: 1.02 }}
+              className="bg-card rounded-2xl overflow-hidden group cursor-pointer"
+              style={{ boxShadow: "var(--card-shadow)" }}
+            >
+              <Link to={`/products/${product.slug}`}>
+                <div className="h-48 bg-secondary/80 flex items-center justify-center p-6 relative overflow-hidden">
+                  <motion.img
+                    src={product.image}
+                    alt={product.name}
+                    className="h-36 w-36 object-contain group-hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                    width={144}
+                    height={144}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card/20 to-transparent" />
+                </div>
+                <div className="p-5">
+                  <h3 className="font-display text-lg font-bold text-foreground mb-2">{product.name}</h3>
+                  <p className="text-sm text-muted-foreground font-body leading-relaxed mb-3">{product.desc}</p>
+                  <span className="text-primary font-body text-sm font-semibold inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                    View Details <ArrowRight size={14} />
+                  </span>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+
       </div>
     </section>
   );

@@ -13,7 +13,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO 
-        title="Fruity Motion Studio | Home"
+        title="Reva International Trading | Home"
         description="India's leading exporter of premium bananas, mangoes, grapes, and fresh vegetables. Sourcing the finest produce for global markets."
       />
       <Navbar />

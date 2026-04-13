@@ -28,7 +28,7 @@ const ProductDetail = () => {
     "description": product.longDesc,
     "brand": {
       "@type": "Brand",
-      "name": "Fruity Motion Studio"
+      "name": "Reva International Trading"
     },
     "category": product.category
   };

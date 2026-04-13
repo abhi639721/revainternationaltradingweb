@@ -34,8 +34,8 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen">
       <SEO 
-        title="Contact Us | Export Enquiries & Support"
-        description="Get in touch with Fruity Motion Studio for export enquiries, partnership opportunities, or to request a quote for premium Indian fresh produce."
+        title="Contact Us | Reva International Trading"
+        description="Get in touch with Reva International Trading for export enquiries, partnership opportunities, or to request a quote for premium Indian fresh produce."
       />
       <Navbar />
       <PageHero

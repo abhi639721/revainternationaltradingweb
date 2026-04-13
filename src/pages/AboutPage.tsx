@@ -42,7 +42,7 @@ const AboutPage = () => {
     <div className="min-h-screen">
       <SEO 
         title="About Us | Global Agro Export Experts"
-        description="Learn more about Fruity Motion Studio (Reva International LLP), our farm-to-table process, and our commitment to supplying premium Indian produce worldwide."
+        description="Learn more about Reva International Trading, our farm-to-table process, and our commitment to supplying premium Indian produce worldwide."
       />
       <Navbar />
       <PageHero
