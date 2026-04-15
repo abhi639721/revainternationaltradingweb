@@ -28,7 +28,7 @@ const ProductDetail = () => {
     "description": product.longDesc,
     "brand": {
       "@type": "Brand",
-      "name": "Reva International Trading"
+      "name": "Reva International Trading LLP"
     },
     "category": product.category
   };

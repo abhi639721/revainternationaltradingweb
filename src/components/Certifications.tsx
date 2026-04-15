@@ -1,13 +1,14 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import { ShieldCheck, Award, Leaf, FileCheck, CheckCircle } from "lucide-react";
+import { ShieldCheck, Award, Globe, FileText, CheckCircle, Building2 } from "lucide-react";
 
 const certifications = [
-  { icon: ShieldCheck, title: "FSSAI Certified", desc: "Food Safety and Standards Authority of India approved for quality assurance." },
-  { icon: Award, title: "APEDA Registered", desc: "Agricultural and Processed Food Products Export Development Authority registered." },
-  { icon: Leaf, title: "Global GAP", desc: "Good Agricultural Practices certification for sustainable farming standards." },
-  { icon: FileCheck, title: "Phytosanitary Certificate", desc: "Plant health certificates issued meeting international standards." },
-  { icon: CheckCircle, title: "ISO 22000", desc: "International standard for food safety management systems." },
+  { icon: ShieldCheck, title: "FSSAI License", desc: "Official government authorization verifying our produce meets stringent national safety and hygiene standards." },
+  { icon: Globe, title: "IEC Code", desc: "Authorized by the DGFT to seamlessly execute authenticated cross-border global trade operations." },
+  { icon: FileText, title: "GST Registration", desc: "Fully compliant with Indian taxation frameworks, ensuring complete transparency in our supply chain and logistics." },
+  { icon: Award, title: "APEDA Registration", desc: "Certified strictly under standardized norms for the premium export of agricultural and processed food products." },
+  { icon: CheckCircle, title: "ROC Incorporation", desc: "A formally recognized corporate entity registered with the Ministry of Corporate Affairs, ensuring trusted business practices." },
+  { icon: Building2, title: "Dubai Trade License", desc: "Strategically registered within a premier UAE free zone, facilitating highly efficient trade out of the GCC." },
 ];
 
 // Double the array for seamless loop

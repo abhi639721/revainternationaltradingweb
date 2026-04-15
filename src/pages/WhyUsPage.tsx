@@ -94,7 +94,7 @@ const WhyUsPage = () => {
     <div className="min-h-screen">
       <SEO 
         title="Why Us | Our Commitment to Quality"
-        description="Discover why Reva International Trading is the preferred global partner for premium agro exports. Sustainability, Quality, and Trust."
+        description="Discover why Reva International Trading LLP is the preferred global partner for premium agro exports. Sustainability, Quality, and Trust."
       />
       <Navbar />
       <PageHero

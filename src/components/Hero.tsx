@@ -14,7 +14,7 @@ const heroSlides = [
   {
     tagline: "India's Premium Banana & Fresh Produce Exporter",
     heading: <>Specializing in{" "}<span className="text-accent">Premium Bananas</span></>,
-    description: "REVA INTERNATIONAL TRADING has gained immense expertise in supplying & trading of Cavendish bananas, exotic tropical fruits, premium table grapes, pomegranates, fresh drumsticks & more to global markets.",
+    description: "REVA INTERNATIONAL TRADING LLP has gained immense expertise in supplying & trading of Cavendish bananas, exotic tropical fruits, premium table grapes, pomegranates, fresh drumsticks & more to global markets.",
     cta: { label: "Our Bananas", to: "/products/banana" },
     image: banana,
     imageAlt: "Premium Indian Bananas — Reva International",

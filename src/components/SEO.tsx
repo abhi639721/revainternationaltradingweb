@@ -12,16 +12,16 @@ interface SEOProps {
 }
 
 const SEO = ({
-  title = "Reva International Trading | Premium Indian Fresh Produce Exporter",
-  description = "Reva International Trading is a leading exporter of premium Cavendish bananas, mangoes, grapes, and fresh vegetables from India to global markets.",
+  title = "Reva International Trading LLP | Premium Indian Fresh Produce Exporter",
+  description = "Reva International Trading LLP is a leading exporter of premium Cavendish bananas, mangoes, grapes, and fresh vegetables from India to global markets.",
   canonical = "https://revaitrading.com",
   ogType = "website",
   ogImage = "/favicon.png",
   twitterHandle = "@RevaTrading",
   structuredData,
-  keywords = "Reva, Reva International, Reva International Trading, Reva Trading, Banana Exporter India, Alfonso Mango Export, Fresh Fruit Export, Indian Vegetable Supplier",
+  keywords = "Reva, Reva International, Reva International Trading LLP, Reva Trading, Banana Exporter India, Alfonso Mango Export, Fresh Fruit Export, Indian Vegetable Supplier",
 }: SEOProps) => {
-  const brandName = "Reva International Trading";
+  const brandName = "Reva International Trading LLP";
   const brandVariations = "Reva, Reva International, Reva Trading";
   
   const fullTitle = title.includes("Reva") 

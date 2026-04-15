@@ -1,49 +1,49 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Leaf, Globe, ShieldCheck, Truck, BadgeCheck, Handshake, CheckCircle2 } from "lucide-react";
+import { Search, ShieldCheck, Box, Truck, FileText, CheckCircle2 } from "lucide-react";
 
 const features = [
   {
-    icon: Leaf,
-    title: "Farm Fresh Quality",
-    desc: "Sourced directly from the finest farms across India with strict quality controls at every step.",
+    icon: Search,
+    title: "Strategic Sourcing",
+    desc: "We identify and partner with certified networks of premium farms and suppliers worldwide.",
     color: "from-emerald-500/20 to-green-500/10",
     iconColor: "text-emerald-600",
   },
   {
-    icon: Globe,
-    title: "Global Reach",
-    desc: "Exporting to 25+ countries across Europe, Asia, Middle East, and beyond.",
-    color: "from-blue-500/20 to-cyan-500/10",
-    iconColor: "text-blue-600",
-  },
-  {
     icon: ShieldCheck,
-    title: "Quality Certified",
-    desc: "FSSAI, APEDA, ISO certified — meeting the highest international food safety standards.",
+    title: "Quality Control",
+    desc: "Rigorous inspection and multi-point testing are conducted to ensure products exceed international standards.",
     color: "from-amber-500/20 to-yellow-500/10",
     iconColor: "text-amber-600",
   },
   {
+    icon: Box,
+    title: "Expert Packaging",
+    desc: "Professional, climate-controlled packaging preserves absolute freshness and meets global regulatory requirements.",
+    color: "from-blue-500/20 to-cyan-500/10",
+    iconColor: "text-blue-600",
+  },
+  {
     icon: Truck,
-    title: "Reliable Logistics",
-    desc: "End-to-end cold chain management ensuring maximum freshness on delivery.",
+    title: "Global Logistics",
+    desc: "Highly efficient air and sea freight solutions equipped with full, real-time tracking capabilities.",
     color: "from-purple-500/20 to-violet-500/10",
     iconColor: "text-purple-600",
   },
   {
-    icon: BadgeCheck,
-    title: "Competitive Pricing",
-    desc: "Best value without compromising on quality — direct from farm to your market.",
-    color: "from-rose-500/20 to-pink-500/10",
-    iconColor: "text-rose-600",
-  },
-  {
-    icon: Handshake,
-    title: "Dedicated Support",
-    desc: "Personalized service, seamless documentation, and hassle-free export processes.",
+    icon: FileText,
+    title: "Customs Clearance",
+    desc: "Comprehensive documentation and strict compliance support guaranteeing smooth and rapid customs processes.",
     color: "from-teal-500/20 to-emerald-500/10",
     iconColor: "text-teal-600",
+  },
+  {
+    icon: CheckCircle2,
+    title: "Assured Delivery",
+    desc: "On-time delivery direct to your location, backed by our commitment to uncompromising quality assurance.",
+    color: "from-rose-500/20 to-pink-500/10",
+    iconColor: "text-rose-600",
   },
 ];
 

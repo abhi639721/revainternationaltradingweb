@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Award, TrendingUp, Users, Shield, Leaf, Droplets, PackageCheck, Truck } from "lucide-react";
+import { Award, TrendingUp, Users, Shield, Leaf, Droplets, PackageCheck, Truck, Package, Globe2, FileCheck, Target } from "lucide-react";
 import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,6 +9,10 @@ import mango from "@/assets/mango.webp";
 import vegetables from "@/assets/vegetables.webp";
 import grapes from "@/assets/grapes.webp";
 import orange from "@/assets/orange.webp";
+import farmSourcingImg from "@/assets/farm_sourcing.webp";
+import cleaningStorageImg from "@/assets/cleaning_storage.webp";
+import qualityControlImg from "@/assets/quality_control.webp";
+import globalDeliveryImg from "@/assets/global_delivery.webp";
 
 const stats = [
   { icon: Award, label: "Years Experience", value: "10+" },
@@ -17,32 +21,33 @@ const stats = [
   { icon: Shield, label: "Satisfaction Rate", value: "95%" },
 ];
 
-const process = [
-  { icon: Leaf, title: "Farm Sourcing", desc: "Our success starts with a network of dedicated farmers. Their expertise and commitment to sustainable practices ensure the finest fruits and vegetables are cultivated under ideal conditions.", image: grapes },
-  { icon: Droplets, title: "Cleaning & Storage", desc: "We meticulously clean and store our produce in cool, hygienic environments, preserving its freshness and maximizing its lifespan for export.", image: vegetables },
-  { icon: PackageCheck, title: "Quality Control", desc: "We adhere to rigorous quality control procedures, ensuring every shipment meets our clients' exacting international standards.", image: orange },
-  { icon: Truck, title: "Cold Chain Delivery", desc: "Our advanced cold chain logistics ensure produce reaches global destinations in pristine condition, maintaining freshness from farm to table.", image: mango },
+const processSteps = [
+  { step: "01", icon: Leaf, title: "Strategic Farm Sourcing", desc: "Our journey begins at the roots. We partner directly with dedicated farmers utilizing sustainable practices, ensuring our fresh fruits and vegetables are cultivated under ideal conditions.", image: farmSourcingImg },
+  { step: "02", icon: Droplets, title: "Advanced Cleaning & Storage", desc: "Post-harvest, every batch is swiftly transported to our facilities. Produce undergoes rigorous cleaning and is stored in climate-controlled environments to preserve profound freshness.", image: cleaningStorageImg },
+  { step: "03", icon: PackageCheck, title: "Stringent Quality Control", desc: "Quality isn't an afterthought. Our certified inspectors conduct thorough multi-point checks—analyzing size, color, firmness, and phytosanitary metrics—ensuring flawless compliance.", image: qualityControlImg },
+  { step: "04", icon: Truck, title: "Global Cold Chain Delivery", desc: "Using advanced cold chain logistics in sea and air freight, we ensure that the micro-climate is perfectly maintained, delivering farm-fresh produce directly to your international doorstep.", image: globalDeliveryImg },
 ];
 
-const countries = [
-  "United Kingdom", "Canada", "Germany", "Spain", "UAE (Dubai)", "Qatar",
-  "Singapore", "Malaysia", "Japan", "South Korea", "New Zealand", "South Africa",
-  "Belgium", "Hong Kong", "Norway", "Sweden",
+const services = [
+  { icon: Package, title: "Import & Export of FMCG Products", desc: "Delivering premium FMCG solutions with consistent quality, reliable logistics, and global market access." },
+  { icon: Globe2, title: "Global Sourcing & Procurement", desc: "Reliable sourcing from trusted producers across Asia and the Middle East at competitive prices." },
+  { icon: FileCheck, title: "International Trade Compliance", desc: "Complete support with trade documents and certifications for smooth cross-border movement." },
+  { icon: Target, title: "Private Label & Packaging Solutions", desc: "Custom branding, packaging, and regional marketing support to launch your F&B products." },
 ];
 
 const AboutPage = () => {
   const storyRef = useRef(null);
   const processRef = useRef(null);
-  const countriesRef = useRef(null);
+  const servicesRef = useRef(null);
   const storyInView = useInView(storyRef, { once: true, margin: "-80px" });
   const processInView = useInView(processRef, { once: true, margin: "-80px" });
-  const countriesInView = useInView(countriesRef, { once: true, margin: "-80px" });
+  const servicesInView = useInView(servicesRef, { once: true, margin: "-80px" });
 
   return (
     <div className="min-h-screen">
       <SEO 
         title="About Us | Global Agro Export Experts"
-        description="Learn more about Reva International Trading, our farm-to-table process, and our commitment to supplying premium Indian produce worldwide."
+        description="Learn more about Reva International Trading LLP, our farm-to-table process, and our commitment to supplying premium Indian produce worldwide."
       />
       <Navbar />
       <PageHero
@@ -114,82 +119,141 @@ const AboutPage = () => {
       </section>
 
       {/* Process Section */}
-      <section className="section-padding bg-secondary/50" ref={processRef}>
-        <div className="container mx-auto">
+      <section className="section-padding bg-secondary/30 relative" ref={processRef}>
+        <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={processInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-center mb-14"
+            className="text-center mb-12 md:mb-20"
           >
             <span className="text-accent font-body font-semibold text-sm tracking-[0.15em] uppercase">Our Process</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mt-3">
               From Farm to Your Table
             </h2>
-            <p className="text-muted-foreground font-body mt-4 max-w-2xl mx-auto">
-              We ensure quality at every step — from sourcing the freshest produce to delivering it across the globe.
+            <p className="text-muted-foreground font-body mt-4 max-w-2xl mx-auto text-base md:text-lg leading-relaxed px-2">
+              We ensure flawless quality at every step — orchestrating a seamless flow from cultivating the freshest produce to delivering it globally.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {process.map((step, i) => (
-              <motion.div
-                key={step.title}
-                initial={{ opacity: 0, y: 40 }}
-                animate={processInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
-                whileHover={{ y: -6 }}
-                className="bg-card rounded-2xl overflow-hidden border border-border group"
-                style={{ boxShadow: "var(--card-shadow)" }}
-              >
-                <div className="flex flex-col sm:flex-row">
-                  <div className="sm:w-40 h-40 sm:h-auto bg-secondary/80 flex items-center justify-center p-4 shrink-0">
-                    <img src={step.image} alt={step.title} className="w-24 h-24 object-contain group-hover:scale-110 transition-transform duration-500" />
+          {/* ── MOBILE layout: vertical stepper ── */}
+          <div className="lg:hidden relative max-w-xl mx-auto">
+            {/* Vertical connector line */}
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-border"></div>
+
+            <div className="space-y-10">
+              {processSteps.map((step, i) => (
+                <motion.div
+                  key={step.step}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={processInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: i * 0.15 }}
+                  className="relative pl-16"
+                >
+                  {/* Step badge */}
+                  <div className="absolute left-0 top-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg z-10 border-4 border-background">
+                    <span className="font-display font-bold text-primary-foreground text-sm">{step.step}</span>
                   </div>
-                  <div className="p-6 flex-1">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                        <step.icon className="w-5 h-5 text-primary" />
-                      </div>
-                      <h3 className="font-display text-lg font-bold text-foreground">{step.title}</h3>
+
+                  {/* Image */}
+                  <div className="relative rounded-2xl overflow-hidden aspect-[16/9] shadow-md border border-border/50 mb-4">
+                    <img src={step.image} alt={step.title} className="w-full h-full object-cover" />
+                    <div className="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+                    <div className="absolute top-3 right-3 w-9 h-9 bg-background rounded-xl flex items-center justify-center shadow-sm">
+                      <step.icon className="w-5 h-5 text-primary" />
                     </div>
-                    <p className="text-sm text-muted-foreground font-body leading-relaxed">{step.desc}</p>
                   </div>
+
+                  {/* Text */}
+                  <h3 className="font-display text-xl font-bold text-foreground mb-2">{step.title}</h3>
+                  <p className="text-muted-foreground font-body text-sm leading-relaxed">{step.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* ── DESKTOP layout: alternating left/right ── */}
+          <div className="hidden lg:block relative max-w-6xl mx-auto">
+            {/* Vertical Flow Line */}
+            <div className="absolute left-1/2 top-10 bottom-10 w-0.5 bg-border -translate-x-1/2"></div>
+            
+            <div className="space-y-24">
+              {processSteps.map((step, i) => (
+                <div key={step.step} className={`flex flex-row items-center gap-16 ${i % 2 !== 0 ? 'flex-row-reverse' : ''}`}>
+                  
+                  {/* Image Block */}
+                  <motion.div 
+                    initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
+                    animate={processInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.7, delay: i * 0.2 }}
+                    className="w-1/2"
+                  >
+                    <div className="relative rounded-3xl overflow-hidden group aspect-[4/3] shadow-lg border border-border/50">
+                      <img src={step.image} alt={step.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                      <div className="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+                      <div className="absolute top-6 left-6 w-16 h-16 bg-background rounded-2xl flex items-center justify-center shadow-md">
+                        <step.icon className="w-8 h-8 text-primary" />
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Center Node */}
+                  <div className="absolute left-1/2 -translate-x-1/2 w-12 h-12 bg-background border-4 border-primary rounded-full flex items-center justify-center shadow-xl z-10 hover:scale-110 transition-transform duration-300">
+                    <span className="font-display font-bold text-primary">{step.step}</span>
+                  </div>
+
+                  {/* Text Block */}
+                  <motion.div 
+                    initial={{ opacity: 0, x: i % 2 === 0 ? 50 : -50 }}
+                    animate={processInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.7, delay: i * 0.2 + 0.1 }}
+                    className={`w-1/2 ${i % 2 === 0 ? 'pl-8' : 'pr-8'}`}
+                  >
+                    <h3 className="font-display text-3xl font-bold text-foreground mb-4">{step.title}</h3>
+                    <p className="text-muted-foreground font-body text-lg leading-relaxed">{step.desc}</p>
+                  </motion.div>
+                  
                 </div>
-              </motion.div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Countries Section */}
-      <section className="section-padding bg-background" ref={countriesRef}>
+      {/* Services Section */}
+      <section className="section-padding bg-background" ref={servicesRef}>
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={countriesInView ? { opacity: 1, y: 0 } : {}}
+            animate={servicesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-14"
           >
-            <span className="text-accent font-body font-semibold text-sm tracking-[0.15em] uppercase">Global Reach</span>
+            <span className="text-accent font-body font-semibold text-sm tracking-[0.15em] uppercase">Our Capabilities</span>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2">
-              Countries We Export To
+              Our Services
             </h2>
+            <p className="text-muted-foreground font-body mt-4 max-w-2xl mx-auto text-lg hover:text-accent transition-colors">
+              We serve high-volume customers across multiple sectors with tailored solutions to meet their specific produce needs.
+            </p>
           </motion.div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {countries.map((country, i) => (
+          <div className="grid md:grid-cols-2 gap-6">
+            {services.map((svc, i) => (
               <motion.div
-                key={country}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={countriesInView ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.4, delay: i * 0.05 }}
-                whileHover={{ scale: 1.05, y: -4 }}
-                className="bg-card rounded-xl p-4 text-center border border-border hover:border-primary/30 transition-colors cursor-default"
+                key={svc.title}
+                initial={{ opacity: 0, y: 30 }}
+                animate={servicesInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                whileHover={{ y: -6, scale: 1.02 }}
+                className="bg-card rounded-2xl p-8 border border-border hover:border-primary/30 transition-all duration-300 group"
                 style={{ boxShadow: "var(--card-shadow)" }}
               >
-                <span className="text-2xl mb-2 block">🌍</span>
-                <span className="font-body text-sm font-medium text-foreground">{country}</span>
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                  <svc.icon className="w-7 h-7 text-primary group-hover:scale-110 transition-transform duration-300" />
+                </div>
+                <h3 className="font-display text-xl font-bold text-foreground mb-3">{svc.title}</h3>
+                <p className="text-muted-foreground font-body leading-relaxed">{svc.desc}</p>
               </motion.div>
             ))}
           </div>

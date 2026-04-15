@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, Globe, Clock } from "lucide-react";
 import logo from "@/assets/logo.webp";
-import revaWordmark from "@/assets/reva.webp";
 import mango from "@/assets/mango.webp";
 import banana from "@/assets/banana.webp";
 import orange from "@/assets/orange.webp";
@@ -12,7 +11,7 @@ const Maintenance = () => {
     <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-background">
       {/* Dynamic Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 z-0" />
-      
+
       {/* Floating Fruits */}
       <motion.img
         src={mango}
@@ -47,10 +46,7 @@ const Maintenance = () => {
           transition={{ duration: 0.8 }}
           className="mb-12"
         >
-          <img src={logo} alt="Reva International Trading Logo" className="w-48 md:w-64 mx-auto drop-shadow-xl" />
-          <p className="font-body text-xs font-bold tracking-[0.3em] uppercase mt-3 text-accent">
-            International Trading
-          </p>
+          <img src={logo} alt="Reva International Trading LLP" className="w-48 md:w-64 mx-auto drop-shadow-xl" />
         </motion.div>
 
         {/* glassmorphism Card */}
@@ -67,8 +63,8 @@ const Maintenance = () => {
             Coming Soon
           </h1>
           <p className="text-muted-foreground font-body text-lg mb-10 leading-relaxed">
-            We are hand-picking the finest digital experience for you. 
-            <strong className="text-foreground tracking-wide"> R E V Λ INTERNATIONAL TRADING</strong> is getting ready to serve premium quality produce globally.
+            We are hand-picking the finest digital experience for you.
+            <strong> Fruity Motion Studio</strong> is getting ready to serve premium quality produce globally.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-6 text-left max-w-md mx-auto mb-10">
@@ -92,11 +88,11 @@ const Maintenance = () => {
             </div>
           </div>
 
-          <motion.div 
+          <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <a 
+            <a
               href="mailto:info@revaitrading.com"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-bold font-body shadow-lg hover:shadow-primary/20 transition-all uppercase tracking-wider"
             >
@@ -114,19 +110,6 @@ const Maintenance = () => {
         >
           <div className="flex items-center gap-2"><Globe size={14} /> Global Export</div>
           <div className="flex items-center gap-2"><Clock size={14} /> Opening Soon</div>
-        </motion.div>
-
-        {/* Bottom Brand Wordmark */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="mt-8 flex flex-col items-center gap-2"
-        >
-          <img src={revaWordmark} alt="Reva International Trading" className="h-8 object-contain opacity-70" />
-          <p className="text-accent font-body text-[10px] font-bold tracking-[0.3em] uppercase">
-            International Trading
-          </p>
         </motion.div>
       </div>
     </div>

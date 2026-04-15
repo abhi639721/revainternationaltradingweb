@@ -6,6 +6,7 @@ import Products from "@/components/Products";
 import WhyUs from "@/components/WhyUs";
 import GlobalReach from "@/components/GlobalReach";
 import Certifications from "@/components/Certifications";
+import DubaiOffice from "@/components/DubaiOffice";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { products } from "@/data/products";
@@ -13,7 +14,7 @@ import { products } from "@/data/products";
 const businessSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Reva International Trading",
+  "name": "Reva International Trading LLP",
   "alternateName": ["Reva", "Reva International", "Reva Trading"],
   "url": "https://revaitrading.com",
   "logo": "https://revaitrading.com/favicon.png",
@@ -34,7 +35,7 @@ const businessSchema = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  "name": "Reva International Trading",
+  "name": "Reva International Trading LLP",
   "image": "https://revaitrading.com/favicon.png",
   "@id": "https://revaitrading.com",
   "url": "https://revaitrading.com",
@@ -71,7 +72,7 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SEO 
-        title="Reva International Trading | Home"
+        title="Reva International Trading LLP | Home"
         description="India's leading exporter of premium bananas, mangoes, grapes, and fresh vegetables. Sourcing the finest produce for global markets."
         structuredData={[businessSchema, localBusinessSchema]}
       />
@@ -81,6 +82,7 @@ const Index = () => {
       <Products />
       <WhyUs />
       <GlobalReach />
+      <DubaiOffice />
       <Certifications />
       <Contact />
       <Footer />

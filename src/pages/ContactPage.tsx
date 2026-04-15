@@ -7,11 +7,10 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 
 const contactInfo = [
-  { icon: Phone, label: "Phone", value: "+91 90332 03330", href: "tel:+919033203330" },
+  { icon: Phone, label: "HQ (India)", value: "+91 98123 45757", href: "tel:+919812345757" },
+  { icon: Phone, label: "Dubai Office", value: "+971 55 540 0347", href: "tel:+971555400347" },
   { icon: Mail, label: "Email", value: "info@revaitrading.com", href: "mailto:info@revaitrading.com" },
-  { icon: MapPin, label: "Address", value: "India" },
-  { icon: Clock, label: "Business Hours", value: "Mon – Sat: 10:00 AM – 7:00 PM" },
-  { icon: Globe, label: "Export Markets", value: "25+ Countries Worldwide" },
+  { icon: MapPin, label: "Locations", value: "India & UAE (Dubai)" },
 ];
 
 const countries = [
@@ -25,17 +24,34 @@ const ContactPage = () => {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    
+    const name = formData.get("name") as string;
+    const phone = formData.get("phone") as string;
+    const email = formData.get("email") as string;
+    const country = formData.get("country") as string;
+    const products = formData.get("products") as string;
+    const message = formData.get("message") as string;
+
+    const subject = encodeURIComponent(`New Export Enquiry from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nCountry: ${country}\nProducts of Interest: ${products}\n\nMessage:\n${message}`
+    );
+
+    window.location.href = `mailto:info@revaitrading.com?subject=${subject}&body=${body}`;
+
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
+    e.currentTarget.reset();
   };
 
   return (
     <div className="min-h-screen">
       <SEO 
-        title="Contact Us | Reva International Trading"
-        description="Get in touch with Reva International Trading for export enquiries, partnership opportunities, or to request a quote for premium Indian fresh produce."
+        title="Contact Us | Reva International Trading LLP"
+        description="Get in touch with Reva International Trading LLP for export enquiries, partnership opportunities, or to request a quote for premium Indian fresh produce."
       />
       <Navbar />
       <PageHero
@@ -95,21 +111,21 @@ const ContactPage = () => {
               <div className="grid sm:grid-cols-2 gap-4 mb-4">
                 <div>
                   <label className="text-sm font-medium text-foreground font-body mb-1.5 block">Name *</label>
-                  <input type="text" required className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground font-body text-sm focus:ring-2 focus:ring-primary/30 outline-none transition" />
+                  <input type="text" name="name" required className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground font-body text-sm focus:ring-2 focus:ring-primary/30 outline-none transition" />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground font-body mb-1.5 block">Phone Number *</label>
-                  <input type="tel" required className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground font-body text-sm focus:ring-2 focus:ring-primary/30 outline-none transition" />
+                  <input type="tel" name="phone" required className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground font-body text-sm focus:ring-2 focus:ring-primary/30 outline-none transition" />
                 </div>
               </div>
               <div className="grid sm:grid-cols-2 gap-4 mb-4">
                 <div>
                   <label className="text-sm font-medium text-foreground font-body mb-1.5 block">Email *</label>
-                  <input type="email" required className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground font-body text-sm focus:ring-2 focus:ring-primary/30 outline-none transition" />
+                  <input type="email" name="email" required className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground font-body text-sm focus:ring-2 focus:ring-primary/30 outline-none transition" />
                 </div>
                 <div>
                   <label className="text-sm font-medium text-foreground font-body mb-1.5 block">Country *</label>
-                  <select required className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground font-body text-sm focus:ring-2 focus:ring-primary/30 outline-none transition">
+                  <select name="country" required className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground font-body text-sm focus:ring-2 focus:ring-primary/30 outline-none transition">
                     <option value="">Select Country</option>
                     {countries.map((c) => (
                       <option key={c} value={c}>{c}</option>
@@ -119,11 +135,11 @@ const ContactPage = () => {
               </div>
               <div className="mb-4">
                 <label className="text-sm font-medium text-foreground font-body mb-1.5 block">Products of Interest *</label>
-                <input type="text" required placeholder="e.g. Mangoes, Onions, Grapes" className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground font-body text-sm focus:ring-2 focus:ring-primary/30 outline-none transition" />
+                <input type="text" name="products" required placeholder="e.g. Mangoes, Onions, Grapes" className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground font-body text-sm focus:ring-2 focus:ring-primary/30 outline-none transition" />
               </div>
               <div className="mb-6">
                 <label className="text-sm font-medium text-foreground font-body mb-1.5 block">Message</label>
-                <textarea rows={4} className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground font-body text-sm focus:ring-2 focus:ring-primary/30 outline-none transition resize-none" placeholder="Tell us about your requirements..." />
+                <textarea name="message" rows={4} className="w-full px-4 py-3 rounded-lg border border-input bg-background text-foreground font-body text-sm focus:ring-2 focus:ring-primary/30 outline-none transition resize-none" placeholder="Tell us about your requirements..." />
               </div>
               <motion.button
                 type="submit"
@@ -131,7 +147,7 @@ const ContactPage = () => {
                 whileTap={{ scale: 0.98 }}
                 className="w-full bg-primary text-primary-foreground py-3.5 rounded-lg font-semibold font-body flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
               >
-                {submitted ? "Request Sent! ✓" : <><Send size={18} /> Submit Enquiry</>}
+                {submitted ? "Message Drafted! ✓" : <><Send size={18} /> Submit Enquiry</>}
               </motion.button>
             </motion.form>
           </div>

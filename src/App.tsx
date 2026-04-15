@@ -9,9 +9,9 @@ import AboutPage from "./pages/AboutPage.tsx";
 import ContactPage from "./pages/ContactPage.tsx";
 import ProductsPage from "./pages/ProductsPage.tsx";
 import ProductDetail from "./pages/ProductDetail.tsx";
+import WhyUsPage from "./pages/WhyUsPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Maintenance from "./pages/Maintenance.tsx";
-import WhyUsPage from "./pages/WhyUsPage.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 
 const queryClient = new QueryClient();

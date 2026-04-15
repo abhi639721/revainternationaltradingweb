@@ -21,7 +21,7 @@ const PageHero = ({ title, breadcrumbs }: PageHeroProps) => (
         transition={{ duration: 0.6 }}
       >
         <p className="text-accent font-body font-semibold text-sm tracking-[0.25em] uppercase mb-2">
-          R E V Λ INTERNATIONAL TRADING
+          R E V Λ INTERNATIONAL TRADING LLP
         </p>
         <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground">
           {title}

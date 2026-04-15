@@ -31,14 +31,14 @@ const Footer = () => {
           {/* Brand & About */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Reva International Trading" className="h-10 w-10 brightness-200" />
+              <img src={logo} alt="Reva International Trading LLP" className="h-10 w-10 brightness-200" />
               <div className="flex flex-col items-start leading-none gap-0.5">
-                <img src={revaWordmark} alt="Reva International Trading" className="h-7 object-contain brightness-200" />
+                <img src={revaWordmark} alt="Reva International Trading LLP" className="h-7 object-contain brightness-200" />
                 <span
                   style={{ fontFamily: "'Rajdhani', sans-serif", color: "hsl(100 55% 60%)", letterSpacing: "0.2em" }}
                   className="text-[0.7rem] font-semibold uppercase"
                 >
-                  INTERNATIONAL TRADING
+                  INTERNATIONAL TRADING LLP
                 </span>
               </div>
             </Link>
@@ -70,39 +70,45 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h4 className="font-display font-bold text-background mb-4">Contact Us</h4>
-            <div className="flex flex-col gap-3">
-              <a
-                href="tel:+919033203330"
-                className="flex items-start gap-2.5 text-background/60 hover:text-background transition-colors group"
-              >
-                <Phone size={15} className="mt-0.5 shrink-0 group-hover:text-accent transition-colors" />
-                <span className="font-body text-sm">+91 90332 03330</span>
-              </a>
-              <a
-                href="mailto:info@revaitrading.com"
-                className="flex items-start gap-2.5 text-background/60 hover:text-background transition-colors group"
-              >
-                <Mail size={15} className="mt-0.5 shrink-0 group-hover:text-accent transition-colors" />
-                <span className="font-body text-sm">info@revaitrading.com</span>
-              </a>
-              <a
-                href="mailto:revainternationaltrading@gmail.com"
-                className="flex items-start gap-2.5 text-background/60 hover:text-background transition-colors group"
-              >
-                <Mail size={15} className="mt-0.5 shrink-0 group-hover:text-accent transition-colors" />
-                <span className="font-body text-sm">revainternationaltrading@gmail.com</span>
-              </a>
-              <div className="flex items-start gap-2.5 text-background/60">
-                <MapPin size={15} className="mt-0.5 shrink-0" />
-                <span className="font-body text-sm leading-relaxed">
-                  A-1, Uttkrash Society, Near Avdhoot Society,<br />
-                  Ardhoot Nagar, Bholav, Bharuch,<br />
-                  Gujarat, India – 392001
-                </span>
+            
+            {/* HQ */}
+            <div className="mb-6">
+              <h5 className="text-background font-semibold font-body text-xs uppercase tracking-wider mb-3 opacity-80 border-b border-background/20 pb-1">India Headquarters</h5>
+              <div className="flex flex-col gap-3">
+                <a href="tel:+919812345757" className="flex items-start gap-2.5 text-background/60 hover:text-background transition-colors group">
+                  <Phone size={15} className="mt-0.5 shrink-0 group-hover:text-accent transition-colors" />
+                  <span className="font-body text-sm">+91 98123 45757</span>
+                </a>
+                <a href="mailto:info@revaitrading.com" className="flex items-start gap-2.5 text-background/60 hover:text-background transition-colors group">
+                  <Mail size={15} className="mt-0.5 shrink-0 group-hover:text-accent transition-colors" />
+                  <span className="font-body text-sm">info@revaitrading.com</span>
+                </a>
+                <div className="flex items-start gap-2.5 text-background/60">
+                  <MapPin size={15} className="mt-0.5 shrink-0" />
+                  <span className="font-body text-sm leading-relaxed">
+                    A-1, Uttkrash Society, Near Avdhoot Society,<br />
+                    Ardhoot Nagar, Bholav, Bharuch, Gujarat 392001
+                  </span>
+                </div>
               </div>
-              <div className="flex items-start gap-2.5 text-background/60">
-                <Clock size={15} className="mt-0.5 shrink-0" />
-                <span className="font-body text-sm">Mon – Sat: 10:00 AM – 7:00 PM</span>
+            </div>
+
+            {/* Dubai */}
+            <div>
+              <h5 className="text-background font-semibold font-body text-xs uppercase tracking-wider mb-3 opacity-80 border-b border-background/20 pb-1">Dubai Regional Office</h5>
+              <div className="flex flex-col gap-3">
+                <a href="tel:+971555400347" className="flex items-start gap-2.5 text-background/60 hover:text-background transition-colors group">
+                  <Phone size={15} className="mt-0.5 shrink-0 group-hover:text-accent transition-colors" />
+                  <span className="font-body text-sm">+971 55 540 0347</span>
+                </a>
+                <div className="flex items-start gap-2.5 text-background/60">
+                  <MapPin size={15} className="mt-0.5 shrink-0" />
+                  <span className="font-body text-sm leading-relaxed">
+                    TATVA International Trading FZC,<br />
+                    Sharjah Publishing City Free Zone,<br />
+                    Sharjah, UAE
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -111,7 +117,7 @@ const Footer = () => {
 
         <div className="border-t border-background/10 pt-6 text-center">
           <p className="text-background/40 text-sm font-body">
-            © {new Date().getFullYear()} Reva International Trading. All rights reserved.
+            © {new Date().getFullYear()} Reva International Trading LLP. All rights reserved.
           </p>
         </div>
       </div>

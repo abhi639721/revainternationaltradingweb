@@ -51,14 +51,14 @@ const Navbar = () => {
       >
         <div className="container mx-auto flex justify-between items-center px-4 py-3">
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Reva International Trading" className="h-12 w-12 object-contain" />
+            <img src={logo} alt="Reva International Trading LLP" className="h-12 w-12 object-contain" />
             <div className="flex flex-col items-start leading-none gap-0.5">
-              <img src={revaWordmark} alt="Reva International Trading" className="h-8 object-contain" />
+              <img src={revaWordmark} alt="Reva International Trading LLP" className="h-8 object-contain" />
               <span
                 style={{ fontFamily: "'Rajdhani', sans-serif", color: "hsl(100 55% 38%)", letterSpacing: "0.2em" }}
                 className="text-[0.7rem] font-semibold tracking-widest uppercase"
               >
-                INTERNATIONAL TRADING
+                INTERNATIONAL TRADING LLP
               </span>
             </div>
           </Link>
