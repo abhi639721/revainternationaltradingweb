@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Instagram } from "lucide-react";
 import logo from "@/assets/logo.webp";
 import revaWordmark from "@/assets/reva.webp";
 
@@ -38,9 +38,19 @@ const Footer = () => {
                 </span>
               </div>
             </Link>
-            <p className="text-background/60 font-body text-sm leading-relaxed">
+            <p className="text-background/60 font-body text-sm leading-relaxed mb-6">
               Your trusted partner for premium Indian fresh produce exports to global markets.
             </p>
+            <div className="flex gap-4">
+              <a 
+                href="https://www.instagram.com/revainternationaltradingllp?utm_source=qr&igsh=cXRyczhzNzJrZ3hm" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center text-background/60 hover:bg-gradient-to-tr hover:from-[#f09433] hover:via-[#e6683c] hover:to-[#bc1888] hover:text-white transition-all duration-300"
+              >
+                <Instagram size={20} />
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
