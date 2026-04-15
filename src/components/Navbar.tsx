@@ -33,7 +33,7 @@ const Navbar = () => {
               <MapPin size={14} /> India
             </span>
             <a href="tel:+919033203330" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">
-              <Phone size={14} /> +91 90332 03330
+              <Phone size={14} /> +91 9033203330
             </a>
           </div>
           <a href="mailto:info@revaitrading.com" className="flex items-center gap-1.5 hover:opacity-80 transition-opacity">

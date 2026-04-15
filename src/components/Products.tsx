@@ -16,9 +16,9 @@ const Products = () => {
     (p) => p.category === "fruits" && p.slug !== "banana"
   );
 
-  // Other vegetables & spices (not drumstick)
+  // Other vegetables (not drumstick)
   const vegProducts = products.filter(
-    (p) => (p.category === "vegetables" || p.category === "spices") && p.slug !== "drumstick"
+    (p) => p.category === "vegetables" && p.slug !== "drumstick"
   );
 
   return (

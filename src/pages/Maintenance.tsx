@@ -83,7 +83,7 @@ const Maintenance = () => {
               </div>
               <div>
                 <p className="text-[10px] text-muted-foreground uppercase font-bold tracking-tighter">Call Us</p>
-                <p className="text-sm font-semibold text-foreground">+91 90332 03330</p>
+                <p className="text-sm font-semibold text-foreground">+91 9033203330</p>
               </div>
             </div>
           </div>

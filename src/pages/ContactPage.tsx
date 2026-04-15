@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/PageHero";
 
 const contactInfo = [
-  { icon: Phone, label: "HQ (India)", value: "+91 98123 45757", href: "tel:+919812345757" },
+  { icon: Phone, label: "HQ (India)", value: "+91 9033203330", href: "tel:+919033203330" },
   { icon: Phone, label: "Dubai Office", value: "+971 55 540 0347", href: "tel:+971555400347" },
   { icon: Mail, label: "Email", value: "info@revaitrading.com", href: "mailto:info@revaitrading.com" },
   { icon: MapPin, label: "Locations", value: "India & UAE (Dubai)" },

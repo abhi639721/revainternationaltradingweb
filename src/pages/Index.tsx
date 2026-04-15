@@ -20,7 +20,7 @@ const businessSchema = {
   "logo": "https://revaitrading.com/favicon.png",
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+91 98123 45757",
+    "telephone": "+91 9033203330",
     "contactType": "customer service",
     "areaServed": "Worldwide",
     "availableLanguage": ["English", "Hindi"]
@@ -39,7 +39,7 @@ const localBusinessSchema = {
   "image": "https://revaitrading.com/favicon.png",
   "@id": "https://revaitrading.com",
   "url": "https://revaitrading.com",
-  "telephone": "+91 98123 45757",
+  "telephone": "+91 9033203330",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Main Market",

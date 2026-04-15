@@ -14,12 +14,8 @@ const quickLinks = [
 const productLinks = [
   { label: "Bananas", to: "/products/banana" },
   { label: "Mangoes", to: "/products/mango" },
-  { label: "Grapes", to: "/products/grapes" },
-  { label: "Pomegranates", to: "/products/pomegranate" },
   { label: "Drumsticks", to: "/products/drumstick" },
   { label: "Onions", to: "/products/onion" },
-  { label: "Tomatoes", to: "/products/tomato" },
-  { label: "Garlic", to: "/products/garlic" },
 ];
 
 const Footer = () => {
@@ -75,9 +71,9 @@ const Footer = () => {
             <div className="mb-6">
               <h5 className="text-background font-semibold font-body text-xs uppercase tracking-wider mb-3 opacity-80 border-b border-background/20 pb-1">India Headquarters</h5>
               <div className="flex flex-col gap-3">
-                <a href="tel:+919812345757" className="flex items-start gap-2.5 text-background/60 hover:text-background transition-colors group">
+                <a href="tel:+919033203330" className="flex items-start gap-2.5 text-background/60 hover:text-background transition-colors group">
                   <Phone size={15} className="mt-0.5 shrink-0 group-hover:text-accent transition-colors" />
-                  <span className="font-body text-sm">+91 98123 45757</span>
+                  <span className="font-body text-sm">+91 9033203330</span>
                 </a>
                 <a href="mailto:info@revaitrading.com" className="flex items-start gap-2.5 text-background/60 hover:text-background transition-colors group">
                   <Mail size={15} className="mt-0.5 shrink-0 group-hover:text-accent transition-colors" />

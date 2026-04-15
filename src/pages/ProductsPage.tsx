@@ -12,7 +12,6 @@ const categories = [
   { key: "all", label: "All Products" },
   { key: "fruits", label: "Fresh Fruits" },
   { key: "vegetables", label: "Fresh Vegetables" },
-  { key: "spices", label: "Spices & Chili" },
 ];
 
 const ProductsPage = () => {

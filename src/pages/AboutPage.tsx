@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Award, TrendingUp, Users, Shield, Leaf, Droplets, PackageCheck, Truck, Package, Globe2, FileCheck, Target } from "lucide-react";
+import { Award, TrendingUp, Users, Shield, Leaf, Droplets, PackageCheck, Truck, Package, Globe2, FileCheck, Target, Quote } from "lucide-react";
 import SEO from "@/components/SEO";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -28,6 +28,15 @@ const processSteps = [
   { step: "04", icon: Truck, title: "Global Cold Chain Delivery", desc: "Using advanced cold chain logistics in sea and air freight, we ensure that the micro-climate is perfectly maintained, delivering farm-fresh produce directly to your international doorstep.", image: globalDeliveryImg },
 ];
 
+const teamMembers = [
+  {
+    name: "Jaydev Patel",
+    role: "Founder & Managing Director",
+    initials: "JP",
+    gradient: "from-primary/80 to-accent/80",
+  },
+];
+
 const services = [
   { icon: Package, title: "Import & Export of FMCG Products", desc: "Delivering premium FMCG solutions with consistent quality, reliable logistics, and global market access." },
   { icon: Globe2, title: "Global Sourcing & Procurement", desc: "Reliable sourcing from trusted producers across Asia and the Middle East at competitive prices." },
@@ -39,9 +48,11 @@ const AboutPage = () => {
   const storyRef = useRef(null);
   const processRef = useRef(null);
   const servicesRef = useRef(null);
+  const teamRef = useRef(null);
   const storyInView = useInView(storyRef, { once: true, margin: "-80px" });
   const processInView = useInView(processRef, { once: true, margin: "-80px" });
   const servicesInView = useInView(servicesRef, { once: true, margin: "-80px" });
+  const teamInView = useInView(teamRef, { once: true, margin: "-80px" });
 
   return (
     <div className="min-h-screen">
@@ -257,6 +268,138 @@ const AboutPage = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Our Team Section */}
+      <section className="section-padding bg-background relative overflow-hidden" ref={teamRef}>
+        {/* Decorative background blobs */}
+        <div className="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-accent/5 blur-3xl pointer-events-none" />
+
+        <div className="container mx-auto relative z-10">
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={teamInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-16"
+          >
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-body font-semibold text-xs tracking-[0.2em] uppercase mb-4 border border-primary/20">
+              Our Team
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-2 mb-4">
+              Meet the Leadership
+            </h2>
+            <div className="w-16 h-1 rounded-full bg-gradient-to-r from-primary to-accent mx-auto mb-5" />
+            <p className="text-muted-foreground font-body max-w-xl mx-auto text-lg leading-relaxed">
+              The passionate individuals behind every shipment, every relationship, and every milestone at Reva International.
+            </p>
+          </motion.div>
+
+          {/* Team Cards */}
+          <div className="flex flex-wrap justify-center gap-8 mb-20">
+            {teamMembers.map((member, i) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 50 }}
+                animate={teamInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.7, delay: i * 0.2 }}
+                whileHover={{ y: -10 }}
+                className="relative group w-72"
+              >
+                {/* Glow border on hover */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10" />
+
+                <div className="bg-card rounded-3xl border border-border group-hover:border-primary/30 transition-all duration-400 overflow-hidden"
+                  style={{ boxShadow: "var(--card-shadow)" }}>
+                  {/* Top gradient strip */}
+                  <div className={`h-2 w-full bg-gradient-to-r ${member.gradient}`} />
+
+                  <div className="p-8 text-center">
+                    {/* Avatar Ring */}
+                    <div className="relative inline-block mb-6">
+                      <div className={`absolute inset-0 rounded-full bg-gradient-to-br ${member.gradient} blur-md opacity-40 scale-110`} />
+                      <div className={`relative w-28 h-28 rounded-full bg-gradient-to-br ${member.gradient} flex items-center justify-center shadow-xl ring-4 ring-background`}>
+                        <span className="font-display text-4xl font-bold text-white">{member.initials}</span>
+                      </div>
+                    </div>
+
+                    <h3 className="font-display text-xl font-bold text-foreground mb-2">{member.name}</h3>
+
+                    {/* Role badge */}
+                    <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary font-body text-xs font-semibold tracking-wide border border-primary/20">
+                      {member.role}
+                    </span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Founder's Message */}
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={teamInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="relative bg-card rounded-3xl border border-border overflow-hidden"
+              style={{ boxShadow: "0 25px 60px rgba(0,0,0,0.12)" }}>
+
+              {/* Left accent bar */}
+              <div className="absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b from-primary to-accent" />
+
+              {/* Large decorative quote */}
+              <div className="absolute top-6 right-8 font-display text-[10rem] leading-none text-primary/5 font-bold select-none pointer-events-none">"</div>
+
+              <div className="relative z-10 p-10 md:p-14">
+                {/* Label */}
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-md">
+                    <Quote className="w-4 h-4 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-xs font-body font-semibold tracking-[0.2em] uppercase text-accent">A Message from Our Founder</p>
+                  </div>
+                </div>
+
+                {/* Quote text */}
+                <blockquote className="space-y-5 text-muted-foreground font-body leading-relaxed text-base md:text-lg">
+                  <p>
+                    When I founded <strong className="text-foreground">Reva International Trading LLP</strong>, my goal was straightforward — to bring India's finest produce to tables across the world, without compromise on quality or integrity.
+                  </p>
+                  <p>
+                    Agriculture is the soul of our nation, and we saw an opportunity to honour that by creating a bridge between hardworking Indian farmers and global buyers who value freshness, consistency, and trust. Every crate we ship carries the effort of those farmers and our promise to our clients.
+                  </p>
+                  <p>
+                    Over the years, what has kept us going is not just business growth, but the satisfaction of a buyer who receives exactly what they expected — or better. That trust is what drives every decision we make, every partnership we forge, and every standard we set.
+                  </p>
+                  <p className="text-foreground font-semibold text-lg">
+                    We are just getting started. Thank you for being part of this journey.
+                  </p>
+                </blockquote>
+
+                {/* Divider */}
+                <div className="mt-10 mb-8 h-px bg-gradient-to-r from-border via-primary/20 to-border" />
+
+                {/* Signature */}
+                <div className="flex items-center gap-5">
+                  <div className="relative">
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/40 to-accent/40 blur-md" />
+                    <div className="relative w-14 h-14 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center shadow-lg ring-2 ring-primary/30">
+                      <span className="font-display font-bold text-white text-lg">JP</span>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="font-display font-bold text-foreground text-lg">Jaydev Patel</p>
+                    <p className="text-sm text-muted-foreground font-body mt-0.5">Founder & Managing Director</p>
+                    <p className="text-xs text-primary font-body font-semibold mt-0.5 tracking-wide">Reva International Trading LLP</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
