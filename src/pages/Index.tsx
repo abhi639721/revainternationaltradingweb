@@ -68,6 +68,8 @@ const localBusinessSchema = {
   }
 };
 
+import InstagramStrip from "@/components/InstagramStrip";
+
 const Index = () => {
   return (
     <div className="min-h-screen">
@@ -85,6 +87,7 @@ const Index = () => {
       <DubaiOffice />
       <Certifications />
       <Contact />
+      <InstagramStrip />
       <Footer />
     </div>
   );
